@@ -12,17 +12,33 @@ Bonus
 
 
 const ulEl = document.querySelector('ul')
+const btnEl = document.getElementById('btn')
 
-
-for (let i = 0; i < 10; i++) {
+// for (let i = 0; i < 10; i++) {
     
-    fetch("https://flynn.boolean.careers/exercises/api/random/mail")
-    .then(response => response.json())
-    .then(data => {
-        const email = data.response
+//     fetch("https://flynn.boolean.careers/exercises/api/random/mail")
+//     .then(response => response.json())
+//     .then(data => {
+//         const email = data.response
 
-        const listEl = document.createElement('li')
-        ulEl.appendChild(listEl)
-        listEl.innerHTML = email
-    }  
-)}
+//         const listEl = document.createElement('li')
+//         ulEl.appendChild(listEl)
+//         listEl.innerHTML = email
+//     }  
+// )}
+
+btnEl.addEventListener("click", function() {
+    for (let i = 0; i < 10; i++) {
+        
+        ulEl.innerHTML = " "
+        fetch("https://flynn.boolean.careers/exercises/api/random/mail")
+        .then(response => response.json())
+        .then(data => {
+            const email = data.response
+            
+            const listEl = document.createElement('li')
+            ulEl.appendChild(listEl)
+            listEl.innerHTML = email
+        }  
+    )}
+})
