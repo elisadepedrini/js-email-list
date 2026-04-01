@@ -13,21 +13,27 @@ Bonus
 
 const ulEl = document.querySelector('ul')
 const btnEl = document.getElementById('btn')
+const tdEl = document.querySelectorAll('td')
 
-// for (let i = 0; i < 10; i++) {
+// 👉🏼ESERCIZIO BASE
+
+/* for (let i = 0; i < 10; i++) {
     
-//     fetch("https://flynn.boolean.careers/exercises/api/random/mail")
-//     .then(response => response.json())
-//     .then(data => {
-//         const email = data.response
+    fetch("https://flynn.boolean.careers/exercises/api/random/mail")
+    .then(response => response.json())
+    .then(data => {
+        const email = data.response
 
-//         const listEl = document.createElement('li')
-//         ulEl.appendChild(listEl)
-//         listEl.innerHTML = email
-//     }  
-// )}
+        const listEl = document.createElement('li')
+        ulEl.appendChild(listEl)
+        listEl.innerHTML = email
+    }  
+)} */
 
-btnEl.addEventListener("click", function() {
+
+// 👉🏼ESERCIZIO CON BUTTON
+
+/* btnEl.addEventListener("click", function() {
     for (let i = 0; i < 10; i++) {
         
         ulEl.innerHTML = " "
@@ -39,6 +45,23 @@ btnEl.addEventListener("click", function() {
             const listEl = document.createElement('li')
             ulEl.appendChild(listEl)
             listEl.innerHTML = email
+        }  
+    )}
+}) */
+
+
+// 👉🏼ESERCIZIO CON TABLE
+
+btnEl.addEventListener("click", function() {
+    for (let i = 0; i < 10; i++) {
+        
+        ulEl.innerHTML = " "
+        fetch("https://flynn.boolean.careers/exercises/api/random/mail")
+        .then(response => response.json())
+        .then(data => {
+            const email = data.response
+            
+            tdEl[i].innerHTML = email
         }  
     )}
 })
